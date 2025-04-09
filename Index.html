@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Aleatória e Divertida</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #282c34;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff6347;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-out;
+        }
+        .random-button {
+            background-color: #ff6347;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .random-button:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .random-element {
+            position: absolute;
+            background-color: #ff6347;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: moveAround 5s linear infinite;
+        }
+        @keyframes moveAround {
+            0% {
+                top: 10%;
+                left: 10%;
+            }
+            25% {
+                top: 10%;
+                left: 90%;
+            }
+            50% {
+                top: 90%;
+                left: 90%;
+            }
+            75% {
+                top: 90%;
+                left: 10%;
+            }
+            100% {
+                top: 10%;
+                left: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo à Página Aleatória!</h1>
+    <p>Aqui você vai ver coisas divertidas e surpresas inesperadas!</p>
+    
+    <button class="random-button" onclick="showRandomFact()">Clique para Fato Aleatório</button>
+    <div class="random-element"></div>
+
+    <script>
+        function showRandomFact() {
+            const facts = [
+                "O maior pizza do mundo tinha 1261,65 metros quadrados!",
+                "O sol libera energia suficiente para abastecer o mundo por 500.000 anos em 1 segundo!",
+                "Sabia que as vacas têm amigos e ficam estressadas quando estão separadas deles?",
+                "O polvo tem 3 corações!",
+                "Você sabia que o coração de um camarão está na sua cabeça?"
+            ];
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            alert(facts[randomIndex]);
+        }
+    </script>
+</body>
+</html>
